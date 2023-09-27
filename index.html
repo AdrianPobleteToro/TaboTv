@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>TaboTv</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+
+<!-- <script src="webOSTVjs-1.2.4/webOSTV.js" charset="utf-8"></script>
+<script src="webOSTVjs-1.2.4/webOSTV-dev.js" charset="utf-8"></script>
+<script type="text/javascript">
+	webOS.service.request("luna://com.palm.systemservice", {
+		method: "clock/getTime",
+		parameters: {},
+		onSuccess: function (args) {
+			console.log("UTC:", args.utc);
+		},
+		onFailure: function (args) {
+			console.log("Failed to getTime");
+		}
+	});
+</script> -->
+
+<body>
+	<div id="spinner-container" style="display: none; position: absolute;">
+		<iframe src="spinner_TaboTv.html" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
+	</div>
+	<div id="container">
+		<div class="button-container">
+			<button class="button" onclick="cerrarApp()">Cerrar App</button>
+			<div class="buttons">
+				<div>
+					<div class="category">Nacionales</div>
+					<button id="button3" class="button-local-channel" onclick="selectButton('1')">CHV</button>
+					<button id="button2" class="button-local-channel" onclick="selectButton('2')">MEGA</button>
+					<button id="button4" class="button-local-channel" onclick="selectButton('3')">C13</button>
+					<button id="button1" class="button-local-channel" onclick="selectButton('4')">TVN</button>
+				</div>
+				<div>
+					<div class="category">Cine</div>
+					<button class="button" onclick="canal('1181')">Paramount</button>
+					<button class="button" onclick="canal('1193')">SPACE</button>
+					<button class="button" onclick="canal('1196')">Universal</button>
+					<button class="button" onclick="canal('1210')">STAR</button>
+					<button class="button" onclick="canal('1007')">AMC</button>
+					<button class="button" onclick="canal('1111')">Film&Arts</button>
+				</div>
+				<div>
+					<div class="category">Series</div>
+					<button class="button" onclick="canal('1019')">ANX</button>
+					<button class="button" onclick="canal('1243')">Universal TV</button>
+					<button class="button" onclick="canal('1254')">Universal Crime</button>
+					<button class="button" onclick="canal('1110')">eE</button>
+					<button class="button" onclick="canal('1129')">FX</button>
+					<button class="button" onclick="canal('1053')">Comedy Central</button>
+					<button class="button" onclick="canal('1190')">Sony Channel</button>
+				</div>
+				<div>
+					<div class="category">Ciencia/Historia</div>
+					<button class="button" onclick="canal('1148')">History</button>
+					<button class="button" onclick="canal('1147')">History 2</button>
+					<button class="button" onclick="canal('1076')">Discovery ID</button>
+					<button class="button" onclick="canal('1081')">Discovery Turbo</button>
+				</div>
+				<div>
+					<div class="category">Cocina</div>
+					<button class="button" onclick="canal('1093')">Gourmet</button>
+					<button class="button" onclick="canal('1095')">Cocina</button>
+					<button class="button" onclick="canal('1113')">Food</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="iframe-container">
+		<iframe id="frameTele" width='100%' height='100%' sandbox="allow-scripts allow-same-origin"
+			allow='autoplay; fullscreen; encrypted-media' frameborder='0' allowfullscreen allowscriptaccess='always'
+			scrolling='no'></iframe>
+	</div>
+	<script>window.open = null;</script>
+	<script src="scripts/script.js" charset="utf-8"></script>
+
+
+	<script>
+		document.addEventListener('keydown', function (event) {
+			switch (event.keyCode) {
+				case 8: // Código de tecla para la flecha izquierda
+					let element = document.getElementsByClassName('button-container');
+					element[0].style.left = element[0].style.left === '-15px' ? '-115px' : '-15px';
+					break;
+				case 'Return': break;
+				default:
+					break;
+			}
+		});
+	</script>
+</body>
+
+</html>
