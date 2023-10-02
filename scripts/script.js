@@ -1,5 +1,5 @@
 let selectedButton = null;
-const urlApi = 'http://www.tabotvapp.somee.com/api/Canal/';
+const urlApi = 'https://www.tabotvapp.somee.com/api/Canal/';
 let url = '';
 let urlResponse = '';
 const spinner = document.getElementById("spinner-container");
